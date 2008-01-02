@@ -12,6 +12,7 @@ Source0:	%{name}-%{version}.tar.bz2
 License:	GPL
 Group:		Networking/Other
 Url:		http://cvs.mandriva.com/cgi-bin/cvsweb.cgi/soft/mandi/
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:  dbus-devel
 Requires(post): rpm-helper
 Requires:       dbus
