@@ -2,7 +2,7 @@
 
 %define name mandi
 %define version 0.8.2
-%define release %mkrel 3
+%define release %mkrel 4
 
 Summary:	Monitoring daemon bridge
 Name:		%{name}
@@ -28,7 +28,6 @@ to user applications.
 %package ifw
 Summary:	Firewall rules for Interactive Firewall
 Group:		Networking/Other
-Requires(post): shorewall
 Requires:       mandi = %{version}
 Requires:       ipset
 
