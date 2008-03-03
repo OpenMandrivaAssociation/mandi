@@ -15,6 +15,7 @@ Url:		http://cvs.mandriva.com/cgi-bin/cvsweb.cgi/soft/mandi/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:  dbus-devel
 Requires(post): rpm-helper
+Requires(preun): rpm-helper
 Requires:       dbus
 
 %description
