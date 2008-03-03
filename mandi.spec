@@ -43,16 +43,16 @@ It is a component of Interactive Firewall.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
-install -D -m755 src/%{name} $RPM_BUILD_ROOT%{_sbindir}/%{name}
-install -D -m644 conf/%{name}.conf $RPM_BUILD_ROOT%{_sysconfdir}/dbus-1/system.d/%{name}.conf
+rm -rf %{buildroot}
+install -D -m755 src/%{name} %{buildroot}%{_sbindir}/%{name}
+install -D -m644 conf/%{name}.conf %{buildroot}%{_sysconfdir}/dbus-1/system.d/%{name}.conf
 install -D -m755 scripts/%{name}.init %buildroot%{_initrddir}/%{name}
 install -d -m755 %buildroot%{_sysconfdir}/ifw/rules.d/
 install -m644 rules.d/* %buildroot%{_sysconfdir}/ifw/rules.d/
-install -m644 scripts/{start,stop} $RPM_BUILD_ROOT%{_sysconfdir}/ifw
+install -m644 scripts/{start,stop} %{buildroot}%{_sysconfdir}/ifw
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %post
 %_post_service mandi
