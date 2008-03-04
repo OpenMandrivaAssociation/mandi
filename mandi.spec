@@ -1,8 +1,8 @@
 # EDIT IN SVN NOT IN SOURCE PACKAGE (NO PATCH ALLOWED).
 
 %define name mandi
-%define version 0.8.2
-%define release %mkrel 4
+%define version 0.9
+%define release %mkrel 1
 
 Summary:	Monitoring daemon bridge
 Name:		%{name}
