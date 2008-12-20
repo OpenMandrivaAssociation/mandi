@@ -2,7 +2,7 @@
 
 %define name mandi
 %define version 0.9
-%define release %mkrel 3
+%define release %mkrel 4
 
 Summary:	Monitoring daemon bridge
 Name:		%{name}
@@ -42,9 +42,7 @@ It is a component of Interactive Firewall.
 %patch0 -p0 -b .MDV_LDFLAGS
 
 %build
-export MDV_LDFLAGS="`rpm --eval %%configure|grep LDFLAGS|cut -d\\" -f2|sed -e 's/\$LDFLAGS\ //'`"
-
-%make CFLAGS="%{optflags}" MDV_LDFLAGS="$MDV_LDFLAGS"
+%make CFLAGS="%{optflags}" MDV_LDFLAGS="%ldflags"
 
 %install
 rm -rf %{buildroot}
