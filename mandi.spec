@@ -2,14 +2,14 @@
 
 %define name mandi
 %define version 1.0
-%define release %mkrel 4
+%define release %mkrel 5
 
 Summary:	Monitoring daemon bridge
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Source0:	%{name}-%{version}.tar.bz2
-Patch0:		mandi-0.9-MDV_LDFLAGS.diff
+#Patch0:		mandi-0.9-MDV_LDFLAGS.diff
 License:	GPL
 Group:		Networking/Other
 Url:		http://cvs.mandriva.com/cgi-bin/cvsweb.cgi/soft/mandi/
@@ -39,10 +39,10 @@ It is a component of Interactive Firewall.
 
 %prep
 %setup -q
-%patch0 -p0 -b .MDV_LDFLAGS
+#%patch0 -p0 -b .MDV_LDFLAGS
 
 %build
-%make CFLAGS="%{optflags}" MDV_LDFLAGS="%ldflags"
+%make
 
 %install
 rm -rf %{buildroot}
