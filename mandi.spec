@@ -2,7 +2,7 @@
 
 %define name mandi
 %define version 1.0
-%define release %mkrel 5
+%define release %mkrel 6
 
 Summary:	Monitoring daemon bridge
 Name:		%{name}
@@ -52,6 +52,7 @@ install -D -m755 scripts/%{name}.init %buildroot%{_initrddir}/%{name}
 install -d -m755 %buildroot%{_sysconfdir}/ifw/rules.d/
 install -m644 rules.d/* %buildroot%{_sysconfdir}/ifw/rules.d/
 install -m644 scripts/{start,stop} %{buildroot}%{_sysconfdir}/ifw
+touch %{buildroot}/%{_sysconfdir}/ifw/whitelist
 
 %clean
 rm -rf %{buildroot}
@@ -70,6 +71,7 @@ rm -rf %{buildroot}
 
 %files ifw
 %dir %{_sysconfdir}/ifw/
+%attr(0600,root,root) %config(noreplace) %{_sysconfdir}/ifw/whitelist
 %{_sysconfdir}/ifw/start
 %{_sysconfdir}/ifw/stop
 %{_sysconfdir}/ifw/rules.d/*
