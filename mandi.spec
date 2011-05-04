@@ -2,7 +2,7 @@
 
 %define name mandi
 %define version 1.0
-%define release %mkrel 9
+%define release %mkrel 10
 
 Summary:	Monitoring daemon bridge
 Name:		%{name}
