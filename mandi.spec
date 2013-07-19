@@ -4,13 +4,12 @@ Summary:	Monitoring daemon bridge
 Name:		mandi
 Version:	1.1
 Release:	2
-License:	GPL
+License:	GPLv2
 Group:		Networking/Other
 Url:		http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/mandi
 Source0:	%{name}-%{version}.tar.bz2
-BuildRequires:	dbus-devel
-Requires(post):	rpm-helper
-Requires(preun):	rpm-helper
+BuildRequires:	pkgconfig(dbus-1)
+Requires(post,preun):	rpm-helper
 Requires:	dbus
 
 %description
@@ -56,7 +55,6 @@ install -m644 scripts/{start,stop} %{buildroot}%{_sysconfdir}/ifw
 touch %{buildroot}/%{_sysconfdir}/ifw/whitelist
 
 %if %mdkver >= 201100
-
 %post
 /bin/systemctl daemon-reload >/dev/null 2>&1 || :
 if [ $1 -eq 1 ]; then
@@ -97,3 +95,4 @@ fi
 %{_sysconfdir}/ifw/start
 %{_sysconfdir}/ifw/stop
 %{_sysconfdir}/ifw/rules.d/*
+
