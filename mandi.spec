@@ -3,7 +3,7 @@
 Summary:	Monitoring daemon bridge
 Name:		mandi
 Version:	1.1
-Release:	4
+Release:	5
 License:	GPLv2
 Group:		Networking/Other
 Url:		http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/mandi
