@@ -3,7 +3,7 @@
 Summary:	Monitoring daemon bridge
 Name:		mandi
 Version:	1.1
-Release:	12
+Release:	13
 License:	GPLv2
 Group:		Networking/Other
 Url:		http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/mandi
@@ -44,7 +44,7 @@ install -D -m755 src/%{name} %{buildroot}%{_sbindir}/%{name}
 install -D -m644 conf/%{name}.conf %{buildroot}%{_sysconfdir}/dbus-1/system.d/%{name}.conf
 
 %if %mdkver >= 201100
-install -D -m755 scripts/%{name}.service %{buildroot}%{_unitdir}/%{name}
+install -D -m644 scripts/%{name}.service %{buildroot}%{_unitdir}/%{name}.service
 %else
 install -D -m755 scripts/%{name}.init %{buildroot}%{_initrddir}/%{name}
 %endif
@@ -72,10 +72,10 @@ fi
 %else
 
 %post
-%_post_service mandi
+%systemd_post mandi
 
 %preun
-%_preun_service mandi
+%systemd_preun mandi
 
 %endif
 
@@ -83,9 +83,9 @@ fi
 %{_sbindir}/%{name}
 %config %{_sysconfdir}/dbus-1/system.d/%{name}.conf
 %if %mdkver >= 201100
-%{_unitdir}/mandi
+%{_unitdir}/mandi.service
 %else
-%{_initrddir}/mandi
+%{_initrddir}/mandi.service
 %endif
 
 %files ifw
