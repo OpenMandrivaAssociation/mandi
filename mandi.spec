@@ -85,7 +85,7 @@ fi
 %if %mdkver >= 201100
 %{_unitdir}/mandi.service
 %else
-%{_initrddir}/mandi.service
+%{_initrddir}/mandi
 %endif
 
 %files ifw
