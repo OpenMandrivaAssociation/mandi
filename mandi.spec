@@ -6,7 +6,7 @@ Version:	1.1
 Release:	20
 License:	GPLv2
 Group:		Networking/Other
-Url:		http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/mandi
+Url:		https://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/mandi
 Source0:	%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(dbus-1)
 Requires(post,preun):	rpm-helper
