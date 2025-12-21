@@ -8,6 +8,7 @@ License:	GPLv2
 Group:		Networking/Other
 Url:		https://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/mandi
 Source0:	%{name}-%{version}.tar.xz
+BuildRequires:	make
 BuildRequires:	pkgconfig(dbus-1)
 Requires(post,preun):	rpm-helper
 Requires:	dbus
